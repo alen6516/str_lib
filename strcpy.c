@@ -1,21 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
-void strcpy_(char *src, char **dst) {
-    *dst = src;
-}
-
-char *strcpy_1(char *dst, const char *src) {
+void *strcpy_1(char *dst, const char *src) {
 	if ((NULL == dst) || (NULL==src))
 		return NULL;
-
 	int i;
 	for (i = 0; src[i] != '\0'; dst[i]=src[i], i++);
-	return dst;
+	//return dst;
 }
 
+void *strcpy_2(char *dst, const char *src) {
+    if ((NULL == dst) || (NULL == src))
+		return NULL;
+    char *result = dst;       	// set return pointer
+    while ( *dst++ = *src++ ); 	// copy char by char
+    //return result;
+}
+
+void *strcpy_() {
+	return "123";
+}
 int main() {
-	char *src = "sample";
-	char dst[10];
-	strcpy_1(dst, src);
-	printf("%s\n", dst);
+	char s[10];
+	strcpy_1(s, "12345");
+	printf("%s\n", s);
+	strcpy_2(s, "543210");
+	printf("%s\n", s);
+
 }
