@@ -8,11 +8,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include "util.h"
 
 int main() {
-    char *s = "123";
-    printf("*s = %c\n", *s);
-    printf("*s++ = %c\n", *s++);
-    printf("*++s = %c\n", *++s);
-    printf("*s = %c\n", *s);
+    char *s;
+    s = randstring(8);
+    printf("%s\n", s);
 }
