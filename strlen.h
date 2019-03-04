@@ -16,6 +16,12 @@ int strlen_3(char *s) {
     return (e-s);
 }
 
+size_t strlen_4(const char *s) {
+    const char *p = s;
+    while (*s) ++s;
+    return s-p;
+}
+
 int strlen(char *s) {
-    return strlen_1(s) & strlen_2(s) & strlen_3(s);
+    return strlen_1(s) & strlen_2(s) & strlen_3(s) & strlen_4(s);
 }
